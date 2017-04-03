@@ -2,7 +2,8 @@
   <div id="app">
     <Navbar :user="user" />
     <Sidebar :maps='maps' />
-    <router-view></router-view>
+    <span class="clear"></span>
+    <router-view  id='router-view'></router-view>
   </div>
 </template>
 

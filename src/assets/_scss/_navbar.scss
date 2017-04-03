@@ -1,11 +1,11 @@
 .navbar {
+    position: fixed;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     height: 75px;
     background-color: #478ECC;
-    position:relative;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     .wrapper {
         display: flex;
