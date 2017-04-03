@@ -3,8 +3,10 @@
     <div class="wrapper">
 
         <i @click="openSidebar" class="material-icons navbar__toggle">menu</i>
-        <img class="navbar__logo" src="../assets/bblogo.svg" alt="BB Logo">
-        <span class="navbar__user" ><p> Hey, {{ user.name }} </p> <router-link to="/user"><img class="navbar__user-image"  :src="user.image"></router-link> </span>
+        <router-link  class="navbar__logo" to="/">
+            <img src="../assets/bblogo.svg" alt="BB Logo">
+        </router-link>
+        <span class="navbar__user" ><p> Hey, {{ user.name }} </p> <router-link to="/leaderboard/user"><img class="navbar__user-image"  :src="user.image"></router-link> </span>
 
     </div>
 </nav>

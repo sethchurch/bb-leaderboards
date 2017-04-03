@@ -24,6 +24,10 @@
         left: 50%;
         transform: translateX(-50%);
         height: 100%;
+        img {
+            display: block;
+            width: 50%;
+        }
     }
     &__user {
         display: flex;

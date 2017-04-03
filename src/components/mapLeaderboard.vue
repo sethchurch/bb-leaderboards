@@ -1,11 +1,18 @@
 <template>
 <div class='mapLeaderboard' >
+    <LeaderboardCard></LeaderboardCard>
 </div>
 </template>
  
 <script>
+import LeaderboardCard from './leaderboardCard';
+
 export default {
-    name: 'mapLeaderboard'
+    name: 'mapLeaderboard',
+    props: ['mapData'],
+    components: {
+        LeaderboardCard
+    }
 };
 </script>
  
