@@ -1,7 +1,7 @@
 <template>
 <aside class='sidebar' >
     <header class="sidebar__header">
-        <i @click="closeSidebar" class="material-icons sidebar__close">close</i>
+        <i @click="toggleSidebar" class="material-icons sidebar__close">close</i>
         <img class='sidebar__logo' src="../assets/bblogo.svg" alt="BB Logo">
         <p class='sidebar__header-text' >Leaderboard</p>
     </header>
@@ -33,8 +33,8 @@ export default {
 name: 'sidebar',
 props: ['maps'],
 methods: {
-    closeSidebar(){
-        document.querySelector('.sidebar').style.left = '-100%';
+    toggleSidebar(){
+        document.querySelector('.sidebar').classList.toggle('sidebar--active');
     }
 }
 };

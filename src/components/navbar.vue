@@ -2,7 +2,7 @@
 <nav class='navbar' >
     <div class="wrapper">
 
-        <i @click="openSidebar" class="material-icons navbar__toggle">menu</i>
+        <i @click="toggleSidebar" class="material-icons navbar__toggle">menu</i>
         <router-link  class="navbar__logo" to="/">
             <img src="../assets/bblogo.svg" alt="BB Logo">
         </router-link>
@@ -17,8 +17,8 @@ export default {
     name: 'navbar',
     props: ['user'],
     methods: {
-        openSidebar(){
-            document.querySelector('.sidebar').style.left = '0%';
+        toggleSidebar(){
+            document.querySelector('.sidebar').classList.toggle('sidebar--active');
         }
     }
 };

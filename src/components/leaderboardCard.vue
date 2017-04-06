@@ -1,12 +1,10 @@
 <template>
 <div class='leaderboard-card' >
-    <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix}}</span> 
-    <span class='leaderboard-card__player'>
-        <a class='leaderboard-card__link' :href="player.url">
+    <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix}}</span>
+    <a class='leaderboard-card__player' :href="player.url">
             <img class='leaderboard-card__image' :src="player.image"> 
-        </a>
         {{ player.name }}
-    </span> 
+    </a>
     <span class='leaderboard-card__time'>{{ player.time + 's'}}</span>
 </div>
 </template>
