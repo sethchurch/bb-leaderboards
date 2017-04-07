@@ -34,7 +34,7 @@
         }
     }
     &__all-time {
-        width: 40%;
+        width: 36%;
         &--header {
             padding: 7px 0;
             background-color: #EABF54;
@@ -43,14 +43,14 @@
         }
     }
     &__monthly {
-        width: 30%;
+        width: 32%;
         &--header {
             background-color: #CFCFCF;
             font-size: 1.2em;
         }
     }
     &__weekly {
-        width: 30%;
+        width: 32%;
         &--header {
             background-color: #C2B29B;
             font-size: 1.2em;
@@ -61,21 +61,4 @@
 .leaderboard-card {
     margin-bottom: 1%;
     width: 90%;
-}
-
-@media (max-width: 1000px) {
-    .map-leaderboard {
-        &__all-time {
-            width: calc(100%/3);
-            &--header {
-                padding: 4px 0;
-            }
-        }
-        &__monthly {
-            width: calc(100%/3);
-        }
-        &__weekly {
-            width: calc(100%/3);
-        }
-    }
 }
