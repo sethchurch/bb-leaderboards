@@ -8,18 +8,32 @@
         flex-direction: column;
         align-items: center;
         .leaderboard-card {
+            transition: background-color 0.3s ease, box-shadow 0.4s, margin 0.3s ease;
             height: 10%;
+            &:hover {
+                background-color: darken(white, 10%);
+                margin: 0.5% 0 1.5% 0;
+            }
             &:nth-child(-n+4) {
                 color: white;
             }
             &:nth-child(2) {
                 background-color: #E5DCA5;
+                &:hover {
+                    background-color: darken(#E5DCA5, 10%);
+                }
             }
             &:nth-child(3) {
                 background-color: #CFCFCF;
+                &:hover {
+                    background-color: darken(#CFCFCF, 10%);
+                }
             }
             &:nth-child(4) {
                 background-color: #C2B29B;
+                &:hover {
+                    background-color: darken(#C2B29B, 10%);
+                }
             }
         }
     }
@@ -60,5 +74,5 @@
 
 .leaderboard-card {
     margin-bottom: 1%;
-    width: 90%;
+    width: 93%;
 }

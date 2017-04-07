@@ -3,8 +3,10 @@
     <div class='leaderboard-card__info'>
         <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix}}</span>
         <a class='leaderboard-card__player' :href="player.url">
-                <img class='leaderboard-card__image' :src="player.image"> 
-                <span class='leaderboard-card__name'>{{ player.name.length > 20 ? player.name.slice(0,16) + '...' : player.name }}</span>
+            <img class='leaderboard-card__image' :src="player.image"> 
+            <div class='leaderboard-card__name'>
+               {{player.name}}
+            </div>
         </a>
     </div>
     <span class='leaderboard-card__time'>{{ player.time + 's'}}</span>
