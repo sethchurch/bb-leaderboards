@@ -16,14 +16,15 @@
         width: 95%;
     }
     &__toggle {
+        width: 30%;
         font-size: 2.5em;
         color: white;
         cursor: pointer;
     }
     &__logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        // position: absolute;
+        // left: 50%;
+        // transform: translateX(-50%);
         height: 100%;
         img {
             display: block;
@@ -34,11 +35,24 @@
         display: flex;
         font-weight: 500;
         color: white;
+        width: 25%;
+        justify-content: flex-end;
         &-image {
             margin-left: 0.5em;
             height: 45px;
             border-radius: 100%;
             border: 5px solid #2A66B0;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        &__greet {
+            display: none;
+        }
+        &__user {
+            width: 11%;
         }
     }
 }

@@ -20,8 +20,8 @@
     <div v-if="$route.path == '/' || $route.path.toLowerCase().indexOf('/leaderboard/map') != -1" class="sidebar__maps">
         <h2 class="sidebar__maps-header" >Maps</h2>
         <div class="sidebar__maps-list">
-            <router-link class="sidebar__maps-list-item" v-for="(map, index) in maps" :to="'/leaderboard/map/' + map.name.toLowerCase()" :key="map.name + index">
-                {{ map.name }}
+            <router-link class="sidebar__maps-list-item" v-for="(map, index) in mapList.data" :to="'/leaderboard/map/' + map['map_name'].toLowerCase()" :key="map.name + index">
+                {{ map["map_name"].replace('surf_', '').charAt(0).toUpperCase() + map["map_name"].replace('surf_', '').slice(1) }}
             </router-link>
         </div>
     </div>
@@ -31,10 +31,28 @@
 <script>
 export default {
 name: 'sidebar',
-props: ['maps'],
 methods: {
     toggleSidebar(){
         document.querySelector('.sidebar').classList.toggle('sidebar--active');
+    }
+},
+computed: {
+    mapList() {
+        let maps = {};
+        fetch('https://api.bbroleplay.co.uk/v1/games/surf/getmaps', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (result) {
+            maps.data = result.data;
+        })
+        console.log(maps);
+        return maps;
     }
 }
 };

@@ -76,3 +76,28 @@
     margin-bottom: 1%;
     width: 93%;
 }
+
+
+@media (max-width: 1000px) {
+    .map-leaderboard {
+        flex-direction: column;
+        &__category {
+            margin-bottom: 1em;
+        }
+        &__all-time {
+            order: 1;
+            width: 100%;
+            &--header {
+                padding: 0;
+            }
+        }
+        &__monthly {
+            order: 2;
+            width: 100%;
+        }
+        &__weekly {
+            order: 3;
+            width: 100%;
+        }
+    }
+}
