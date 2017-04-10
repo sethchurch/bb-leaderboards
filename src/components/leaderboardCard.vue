@@ -2,14 +2,14 @@
 <div class='leaderboard-card' >
     <div class='leaderboard-card__info'>
         <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix}}</span>
-        <a class='leaderboard-card__player' :href="player.url">
-            <img class='leaderboard-card__image' :src="player.image"> 
+        <a class='leaderboard-card__player' :href="'http://steamcommunity.com/profiles/' + player.steamid64">
+            <img class='leaderboard-card__image' :src="getPlayerImage"> 
             <div class='leaderboard-card__name'>
-               {{player.name}}
+               {{player.gamename}}
             </div>
         </a>
     </div>
-    <span class='leaderboard-card__time'>{{ player.time + 's'}}</span>
+    <span class='leaderboard-card__time'>{{ player['time_record'].toFixed(2) + 's'}}</span>
 </div>
 </template>
  
@@ -23,6 +23,9 @@ export default {
             if (this.rank == 2) { return 'nd' };
             if (this.rank == 3) { return 'rd' };
             return 'th';
+        },
+        getPlayerImage() {
+            return '';
         }
     }
 };

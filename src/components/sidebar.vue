@@ -16,19 +16,13 @@
             <i class="material-icons">group</i> Seasonal Leaderboard 
         </router-link>
     </nav>
-    <hr v-if="$route.path == '/' || $route.path.toLowerCase().indexOf('/leaderboard/map') != -1" class="sidebar__divider" />
-    <div v-if="$route.path == '/' || $route.path.toLowerCase().indexOf('/leaderboard/map') != -1" class="sidebar__maps">
-        <h2 class="sidebar__maps-header" >Maps</h2>
-        <div class="sidebar__maps-list">
-            <router-link class="sidebar__maps-list-item" v-for="(map, index) in mapList.data" :to="'/leaderboard/map/' + map['map_name'].toLowerCase()" :key="map.name + index">
-                {{ map["map_name"].replace('surf_', '').charAt(0).toUpperCase() + map["map_name"].replace('surf_', '').slice(1) }}
-            </router-link>
-        </div>
-    </div>
+    <hr v-if="showMaps" class="sidebar__divider" />
+    <MapList v-if="showMaps" /> 
 </aside>
 </template>
  
 <script>
+import MapList from './mapList';
 export default {
 name: 'sidebar',
 methods: {
@@ -37,23 +31,13 @@ methods: {
     }
 },
 computed: {
-    mapList() {
-        let maps = {};
-        fetch('https://api.bbroleplay.co.uk/v1/games/surf/getmaps', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (result) {
-            maps.data = result.data;
-        })
-        console.log(maps);
-        return maps;
+    showMaps() {
+        console.log(this);0
+        return this.$route.name == 'Index' || this.$route.path.toLowerCase().indexOf('map') != -1;
     }
+},
+components: {
+    MapList
 }
 };
 </script>

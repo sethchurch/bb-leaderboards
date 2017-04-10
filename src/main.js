@@ -3,9 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import FetchData from 'vue-fetch-data'
-
-Vue.use(FetchData)
 
 Vue.config.productionTip = false
 

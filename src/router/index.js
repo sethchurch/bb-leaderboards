@@ -11,18 +11,17 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: MapLeaderboard
+      component: MapLeaderboard,
     },
     {
       path: '/leaderboard/map',
       name: 'Map Leaderboard',
-      component: MapLeaderboard
+      component: MapLeaderboard,
     },
     {
-      path: '/leaderboard/map/:mapname',
-      name: 'Map Leaderboard',
+      path: '/leaderboard/map/:mapid',
+      name: 'Map Leaderboard id',
       component: MapLeaderboard,
-      props: { mapData: require('../placeholder-data/surf_boring-leaderboard-data') }
     },
     {
       path: '/leaderboard/user',

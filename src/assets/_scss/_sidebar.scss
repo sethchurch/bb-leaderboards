@@ -7,7 +7,7 @@
     position: fixed;
     z-index: 25;
     top: 0;
-    left: -100%;
+    left: -110%;
     background-color: #fff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     &.sidebar--active {
@@ -92,14 +92,17 @@
         border: 1px solid #EDEDED;
         width: 99%;
     }
-    &__maps {
+}
+
+.map-list {
         display: flex;
         flex-direction: column;
         text-align: center;
-        &-header {
+        height: 100%;
+        &__header {
             margin: 0;
         }
-        &-list {
+        &__list {
             width: 100%;
             list-style-type: none;
             text-align: left;
@@ -125,4 +128,3 @@
             }
         }
     }
-}
