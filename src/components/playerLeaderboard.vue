@@ -1,6 +1,6 @@
 <template>
 <div class='player-leaderboard' >
-    <div class='player-leaderboard__header'><span>Map</span><span>Time</span></div>
+    <div class='player-leaderboard__header'><span>Rank</span><span>Time</span></div>
     <span class='clear-me'></span>
     <div class='player-leaderboard__container'>
         <userCard v-if="recordsReady" v-for="(score, index) in playerRecords" :key="'user' + index" :rank="index + 1" :time="score['time_record']" class='player-leaderboard__card' />

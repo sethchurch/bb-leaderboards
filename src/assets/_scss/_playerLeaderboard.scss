@@ -20,6 +20,31 @@
     }
     &__card {
         margin: 0.5em 0;
+        &:hover {
+                background-color: darken(white, 10%);
+            }
+            &:nth-child(-n+3) {
+                color: white;
+            }
+            &:nth-child(1) {
+                background-color: #E5DCA5;
+                &:hover {
+                    background-color: darken(#E5DCA5, 10%);
+                }
+            }
+            &:nth-child(2) {
+                background-color: #CFCFCF;
+                &:hover {
+                    background-color: darken(#CFCFCF, 10%);
+                }
+            }
+            &:nth-child(3) {
+                background-color: #C2B29B;
+                &:hover {
+                    background-color: darken(#C2B29B, 10%);
+                }
+            }
+
     }
 }
 

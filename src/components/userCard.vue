@@ -1,7 +1,7 @@
 <template>
 <div class='user-card' >
     <h3 class='user-card__map'>{{ rank + getPlaceSuffix}}</h3>
-    <h4 class='user-card__time'>{{ time + 's' }}</h4>
+    <h4 class='user-card__time'>{{ time.toFixed(2) + 's' }}</h4>
 </div>
 </template>
  
