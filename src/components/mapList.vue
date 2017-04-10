@@ -11,7 +11,7 @@
 
     <h2 v-if="mapList.data" class="map-list__header" >Maps</h2>
     <div v-if="mapList.data" class="map-list__list">
-        <router-link class="map-list__list-item" v-for="(map, index) in mapList.data" :to="'/leaderboard/map/' + map['map_id']" :key="map.name + index">
+        <router-link class="map-list__list-item" v-for="(map, index) in mapList.data" :to="getLink + map['map_id']" :key="map.name + index">
             {{ map["map_name"].replace('surf_', '').charAt(0).toUpperCase() + map["map_name"].replace('surf_', '').slice(1) }}
         </router-link>
     </div>
@@ -30,9 +30,6 @@ name: 'mapList',
   },
   created () {
     this.fetchData()
-  },
-  watch: {
-    '$route': 'fetchData'
   },
   methods: {
     fetchData () {
@@ -55,6 +52,15 @@ name: 'mapList',
             this.mapList.data = res.data;
         })
     }
+  },
+  computed: {
+      getLink() {
+            if(this.$route.path.indexOf('user') == -1) {
+                return '/leaderboard/map/' 
+            } else {
+                return '/leaderboard/user/map/';
+            }
+      }
   }
 };
 </script>

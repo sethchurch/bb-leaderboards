@@ -1,23 +1,25 @@
 <template>
 <div class='map-leaderboard' >
-    <div v-if="loading">Loading...</div>
-    <div v-if="recordsReady" class='map-leaderboard__weekly map-leaderboard__category'>
+    <div class='map-leaderboard__weekly map-leaderboard__category'>
         <header class='map-leaderboard__weekly--header map-leaderboard__category-header'>
             <h1>Weekly</h1>
         </header>
-        <LeaderboardCard class='map-leaderboard__weekly--card' v-for="(record, index) in mapRecords.weekly" :key="'allTime' + index" :rank="index + 1" :player="record" />
+        <div v-if="loading">Loading...</div>
+        <LeaderboardCard v-if="recordsReady"  class='map-leaderboard__weekly--card' v-for="(record, index) in mapRecords.weekly" :key="'allTime' + index" :rank="index + 1" :player="record" />
     </div>
-    <div v-if="recordsReady" class='map-leaderboard__all-time map-leaderboard__category'>
+    <div class='map-leaderboard__all-time map-leaderboard__category'>
         <header class='map-leaderboard__all-time--header map-leaderboard__category-header'>
             <h1>All-Time</h1>
         </header>
-        <LeaderboardCard class='map-leaderboard__all-time--card' v-for="(record, index) in mapRecords.allTime" :key="'allTime' + index" :rank="index + 1" :player="record" />
+        <div v-if="loading">Loading...</div>
+        <LeaderboardCard v-if="recordsReady" class='map-leaderboard__all-time--card' v-for="(record, index) in mapRecords.allTime" :key="'allTime' + index" :rank="index + 1" :player="record" />
     </div>
-    <div v-if="recordsReady" class='map-leaderboard__monthly map-leaderboard__category'>
+    <div class='map-leaderboard__monthly map-leaderboard__category'>
         <header class='map-leaderboard__monthly--header map-leaderboard__category-header'>
             <h1>Monthly</h1>
         </header>
-        <LeaderboardCard class='map-leaderboard__monthly--card' v-for="(record, index) in mapRecords.monthly" :key="'allTime' + index" :rank="index + 1" :player="record" />
+        <div v-if="loading">Loading...</div>
+        <LeaderboardCard v-if="recordsReady"  class='map-leaderboard__monthly--card' v-for="(record, index) in mapRecords.monthly" :key="'allTime' + index" :rank="index + 1" :player="record" />
     </div>
 </div>
 </template>
@@ -49,7 +51,7 @@ export default {
             this.loading = true;
             this.recordsReady = false;
             this.mapId = this.$route.params.mapid || 2; // set new route id 
-
+            
             let categories = ['alltime', 'monthly', 'weekly'];
 
             const getRecords = (type, id) => fetch(`https://api.bbroleplay.co.uk/v1/games/surf/records/${type}/map/${id}`, { 

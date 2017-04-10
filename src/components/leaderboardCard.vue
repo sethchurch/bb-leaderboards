@@ -1,11 +1,11 @@
 <template>
 <div class='leaderboard-card' >
     <div class='leaderboard-card__info'>
-        <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix}}</span>
+        <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix }}</span>
         <a class='leaderboard-card__player' :href="'http://steamcommunity.com/profiles/' + player.steamid64">
-            <img class='leaderboard-card__image' :src="getPlayerImage"> 
+            <PlayerImage className='leaderboard-card__image' :steamId='player.steamid64'/> 
             <div class='leaderboard-card__name'>
-               {{player.gamename}}
+               {{ player.gamename }}
             </div>
         </a>
     </div>
@@ -14,19 +14,20 @@
 </template>
  
 <script>
+import PlayerImage from './playerImage';
 export default {
     name: 'leaderboardCard',
     props: ['player', 'rank'],
     computed: {
         getPlaceSuffix() {
-            if (this.rank == 1) { return 'st' };
-            if (this.rank == 2) { return 'nd' };
-            if (this.rank == 3) { return 'rd' };
+            if (this.rank == 1 || (this.rank > 20 && this.rank.toString().charAt(1) == '1')) { return 'st' };
+            if (this.rank == 2 || (this.rank > 20 && this.rank.toString().charAt(1) == '2')) { return 'nd' };
+            if (this.rank == 3 || (this.rank > 20 && this.rank.toString().charAt(1) == '3')) { return 'rd' };
             return 'th';
         },
-        getPlayerImage() {
-            return '';
-        }
+    },
+    components: {
+        PlayerImage
     }
 };
 </script>

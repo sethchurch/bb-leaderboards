@@ -12,12 +12,13 @@
         <router-link class="sidebar__nav-item" to="/leaderboard/user">
             <i class="material-icons">person</i> Personal Leaderboard
         </router-link>
+        <!--
         <router-link class="sidebar__nav-item" to="/leaderboard/seasonal">
             <i class="material-icons">group</i> Seasonal Leaderboard 
-        </router-link>
+        </router-link> -->
     </nav>
-    <hr v-if="showMaps" class="sidebar__divider" />
-    <MapList v-if="showMaps" /> 
+    <hr class="sidebar__divider" />
+    <MapList /> 
 </aside>
 </template>
  
@@ -28,12 +29,6 @@ name: 'sidebar',
 methods: {
     toggleSidebar(){
         document.querySelector('.sidebar').classList.toggle('sidebar--active');
-    }
-},
-computed: {
-    showMaps() {
-        console.log(this);0
-        return this.$route.name == 'Index' || this.$route.path.toLowerCase().indexOf('map') != -1;
     }
 },
 components: {

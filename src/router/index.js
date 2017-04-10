@@ -27,7 +27,11 @@ export default new Router({
       path: '/leaderboard/user',
       name: 'Player Leaderboard',
       component: PlayerLeaderboard,
-      props: { playerData: require('../placeholder-data/user_ender_data') }
+    },
+    {
+      path: '/leaderboard/user/map/:mapid',
+      name: 'Player Map Leaderboard',
+      component: PlayerLeaderboard,
     }
   ]
 })
