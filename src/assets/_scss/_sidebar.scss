@@ -47,6 +47,7 @@
         flex-direction: column;
         align-items: center;
         &-item {
+            position: relative;
             text-decoration: none;
             color:black;
             transition: 0.3s ease;
@@ -55,6 +56,21 @@
             align-items: center;
             padding: 5px 0;
             font-weight: 400;
+            overflow: hidden;
+            &.router-link-active {
+                background-color: darken(#fff,10%) !important;
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    background-color: #478ECC;
+                    top: 45%;
+                    left: 90%;
+                    transform: rotate(45deg) translateY(-60%);
+                }
+            }
             &:hover {
                 background-color: darken(#fff, 5%);
             }
@@ -112,10 +128,26 @@
             &-item {
                 transition: 0.3s ease;
                 text-decoration: none;
+                position: relative;
+                overflow: hidden;
                 color: black;
                 font-weight: 400;
                 display: block;
                 padding: 0.5em 0;
+                &.router-link-active {
+                    background-color: darken(#fff,15%) !important;
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 55px;
+                        height: 55px;
+                        background-color: #478ECC;
+                        top: 45%;
+                        left: 90%;
+                        transform: rotate(45deg) translateY(-63%);
+                    }
+                }
                 &:hover {
                     background-color: darken(#fff, 5%);
                 }
