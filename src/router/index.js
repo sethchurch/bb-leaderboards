@@ -1,7 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import MapLeaderboard from '@/components/mapLeaderboard'
-import PlayerLeaderboard from '@/components/playerLeaderboard'
+import Vue from 'vue';
+import Router from 'vue-router';
+import MapLeaderboard from '@/components/mapLeaderboard';
+import PlayerLeaderboard from '@/components/playerLeaderboard';
+import SeasonalLeaderboard from '@/components/seasonalLeaderboard';
 
 
 Vue.use(Router)
@@ -32,6 +33,16 @@ export default new Router({
       path: '/leaderboard/user/map/:mapid',
       name: 'Player Map Leaderboard',
       component: PlayerLeaderboard,
+    },
+    {
+      path: '/leaderboard/seasonal',
+      name: 'Seasonal Leaderboard',
+      component: SeasonalLeaderboard,
+    },
+    {
+      path: '/leaderboard/seasonal/map/:mapid',
+      name: 'Seasonal Map Leaderboard',
+      component: SeasonalLeaderboard,
     }
   ]
 })

@@ -28,6 +28,7 @@ name: 'mapList',
             mapList: {}
         }
   },
+  props: ['routeType'],
   created () {
     this.fetchData()
   },
@@ -54,12 +55,20 @@ name: 'mapList',
     }
   },
   computed: {
-      getLink() {
-            if(this.$route.path.indexOf('user') == -1) {
-                return '/leaderboard/map/' 
-            } else {
+      getLink () {
+          switch(this.routeType) {
+              case 0:
+                return '/leaderboard/map/';
+                break;
+              case 1:
                 return '/leaderboard/user/map/';
-            }
+                break;
+              case 2:
+                return '/leaderboard/seasonal/map/';
+                break;
+              default:
+                return '/leaderboard/map/';
+          }
       }
   }
 };
