@@ -9,7 +9,7 @@
             </div>
         </a>
     </div>
-    <span class='leaderboard-card__time'>{{ player['time_record'].toFixed(2) + 's'}}</span>
+    <span class='leaderboard-card__time'>{{ formatScore(score) }}</span>
 </div>
 </template>
  
@@ -17,7 +17,15 @@
 import PlayerImage from './playerImage';
 export default {
     name: 'leaderboardCard',
-    props: ['player', 'rank'],
+    props: ['player', 'rank', 'score', 'isTime'],
+    methods: {
+        formatScore(score) {
+            if(this.isTime) {
+                return score.toFixed(2) + 's'
+            }
+            return score;
+        }
+    },
     computed: {
         getPlaceSuffix() {
             if (this.rank == 1 || (this.rank > 20 && this.rank.toString().charAt(1) == '1')) { return 'st' };

@@ -1,20 +1,37 @@
 <template>
 <div class='seasonal-leaderboard' >
 
-    <div class='seasonal-leaderboard__map'>
+    <div class='seasonal-leaderboard__section seasonal-leaderboard__section--map'>
         <header class='seasonal-leaderboard__header seasonal-leaderboard__header--map'>
             <h2>Map Leaderboard</h2>
         </header>
-        <div v-if="loading">Loading...</div>
-        <LeaderboardCard v-if="seasonalReady"  class='seasonal-leaderboard__card' v-for="(record, index) in mapRecords" :key="'allTime' + index" :rank="index + 1" :player="record" />
+        <div v-if="mapRecordsLoading">Loading...</div>
+
+        <LeaderboardCard v-if="mapRecordsReady" 
+        class='seasonal-leaderboard__card' v-for="(record, index) in mapRecords" 
+        :key="'allTime' + index" 
+        :rank="index + 1" 
+        :player="record"
+        :score="record['time_record']"
+        :isTime="true" />
+
     </div>
 
-    <div class='seasonal-leaderboard__overall'>
-        <header class='seasonal-leaderboard__header seasonal-leaderboard__header--seasonal'>
+    <div class='seasonal-leaderboard__section seasonal-leaderboard__section--overall'>
+        <header class='seasonal-leaderboard__header seasonal-leaderboard__header--overall'>
             <h2>Seasonal Leaderboard</h2>
         </header>
-        <div v-if="loading">Loading...</div>
-        <LeaderboardCard v-if="mapRecordsReady"  class='seasonal-leaderboard__card' v-for="(record, index) in seasonalRecords" :key="'allTime' + index" :rank="index + 1" :player="record" />
+        <div v-if="seasonalRecordsLoading">Loading...</div>
+
+        <div class='seasonal-leaderboard__wrapper seasonal-leaderboard__wrapper--overall'>
+            <LeaderboardCard v-if="seasonalReady" 
+            class='seasonal-leaderboard__card' v-for="(record, index) in seasonalRecords" 
+            :key="'allTime' + index" 
+            :rank="index + 1" 
+            :player="record"
+            :score="record['points_num']" />
+        </div>
+
     </div>
 
 </div>
@@ -66,7 +83,7 @@ export default {
                 return blob.json();
             }).then((json) => {
                 this.mapRecordsLoading = false;
-                this.mapRecords = json.data;
+                this.mapRecords = json.data.slice(0,10);
                 this.mapRecordsReady = true;
             })
         },
@@ -88,7 +105,7 @@ export default {
                 return blob.json();
             }).then((json) => {
                 this.seasonalRecordsLoading = false;
-                this.seasonalRecords = json.data;
+                this.seasonalRecords = json.data.slice(0,100);
                 this.seasonalReady = true;
             })
         }
