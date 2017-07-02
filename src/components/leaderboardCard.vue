@@ -2,7 +2,7 @@
 <div class='leaderboard-card' >
     <div class='leaderboard-card__info'>
         <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix }}</span>
-        <a class='leaderboard-card__player' :href="'http://steamcommunity.com/profiles/' + player.steamid64">
+        <a class='leaderboard-card__player' :href="'/leaderboard/user/' + player.steamid64">
             <PlayerImage className='leaderboard-card__image' :steamId='player.steamid64'/> 
             <div class='leaderboard-card__name'>
                {{ player.gamename }}
