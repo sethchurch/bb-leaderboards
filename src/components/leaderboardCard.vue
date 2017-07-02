@@ -2,12 +2,12 @@
 <div class='leaderboard-card' >
     <div class='leaderboard-card__info'>
         <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix }}</span>
-        <a class='leaderboard-card__player' :href="'/leaderboard/user/' + player.steamid64">
+        <router-link class='leaderboard-card__player' :to="'/leaderboard/user/' + player.steamid64">
             <PlayerImage className='leaderboard-card__image' :steamId='player.steamid64'/> 
             <div class='leaderboard-card__name'>
                {{ player.gamename }}
             </div>
-        </a>
+        </router-link>
     </div>
     <span class='leaderboard-card__time'>{{ formatScore(score) }}</span>
 </div>

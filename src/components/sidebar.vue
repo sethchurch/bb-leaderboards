@@ -6,20 +6,22 @@
         <p class='sidebar__header-text' >Leaderboard</p>
     </header>
     <nav class="sidebar__nav">
-        <router-link @click.native="setType(0)" class="sidebar__nav-item" to="/leaderboard/map">
+        <router-link class="sidebar__nav-item" to="/leaderboard/map">
             <i class="material-icons">star</i> Map Leaderboard
         </router-link>
-
-        <router-link @click.native="setType(1)" class="sidebar__nav-item" to="/leaderboard/user">
+        
+        <!--
+        <router-link  class="sidebar__nav-item" to="/leaderboard/user">
             <i class="material-icons">person</i> Personal Leaderboard
         </router-link>
-
-        <router-link @click.native="setType(2)" class="sidebar__nav-item" to="/leaderboard/seasonal">
+        -->
+        
+        <router-link  class="sidebar__nav-item" to="/leaderboard/seasonal">
             <i class="material-icons">group</i> Seasonal Leaderboard 
         </router-link>
     </nav>
     <hr class="sidebar__divider" />
-    <MapList :routeType="mapType" /> 
+    <MapList /> 
 </aside>
 </template>
  
@@ -27,15 +29,7 @@
 import MapList from './mapList';
 export default {
 name: 'sidebar',
-data() {
-    return {
-        mapType: 0,
-    }
-},
 methods: {
-    setType(type) {
-        this.mapType = type;
-    },
     toggleSidebar(){
         document.querySelector('.sidebar').classList.toggle('sidebar--active');
     }

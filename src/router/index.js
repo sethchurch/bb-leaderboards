@@ -19,30 +19,35 @@ export default new Router({
       name: 'Map Leaderboard',
       component: MapLeaderboard,
     },
+    // {
+    //   path: '/leaderboard/map/:mapid',
+    //   name: 'Map Leaderboard id',
+    //   component: MapLeaderboard,
+    // },
+    // {
+    //   path: '/leaderboard/user',
+    //   name: 'Player Leaderboard',
+    //   component: PlayerLeaderboard,
+    // },
     {
-      path: '/leaderboard/map/:mapid',
-      name: 'Map Leaderboard id',
-      component: MapLeaderboard,
-    },
-    {
-      path: '/leaderboard/user',
+      path: '/leaderboard/user/:userid',
       name: 'Player Leaderboard',
       component: PlayerLeaderboard,
     },
-    {
-      path: '/leaderboard/user/map/:mapid',
-      name: 'Player Map Leaderboard',
-      component: PlayerLeaderboard,
-    },
+    //{
+    //   path: '/leaderboard/user/map/:mapid',
+    //   name: 'Player Map Leaderboard',
+    //   component: PlayerLeaderboard,
+    // },
     {
       path: '/leaderboard/seasonal',
       name: 'Seasonal Leaderboard',
       component: SeasonalLeaderboard,
     },
-    {
-      path: '/leaderboard/seasonal/map/:mapid',
-      name: 'Seasonal Map Leaderboard',
-      component: SeasonalLeaderboard,
-    }
+    // {
+    //   path: '/leaderboard/seasonal/map/:mapid',
+    //   name: 'Seasonal Map Leaderboard',
+    //   component: SeasonalLeaderboard,
+    // }
   ]
 })

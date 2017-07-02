@@ -74,7 +74,7 @@ export default {
             this.mapRecords = {};
             this.loading = true;
             this.recordsReady = false;
-            this.mapId = this.$route.params.mapid || 2; // set new route id 
+            this.mapId = this.$route.query.mapid || 2; // set new route id 
             
             let categories = ['alltime', 'monthly', 'weekly'];
 

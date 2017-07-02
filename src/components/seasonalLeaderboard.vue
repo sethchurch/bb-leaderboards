@@ -69,7 +69,7 @@ export default {
         this.fetchSeasonalRecords()
     },
     watch: {
-        '$route': 'fetchMapRecords'
+        '$route.query.mapid': 'fetchMapRecords'
     },
     methods: {
         fetchMapRecords() {
@@ -77,7 +77,7 @@ export default {
             this.mapRecords = {};
             this.mapRecordsLoading = true;
             this.mapRecordsReady = false;
-            this.mapId = this.$route.params.mapid || 2; // set new route id 
+            this.mapId = this.$route.query.mapid || 2; // set new route id 
             
             fetch(`https://api.bbroleplay.co.uk/v1/games/surf/records/season/map/${this.mapId}`, { 
                 method: 'post', 

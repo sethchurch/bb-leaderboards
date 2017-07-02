@@ -22,28 +22,36 @@
         cursor: pointer;
     }
     &__logo {
-        // position: absolute;
-        // left: 50%;
-        // transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         height: 100%;
         img {
-            display: block;
+            position: relative;
+            display: inline-block;
             width: 50%;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
-    &__user {
-        display: flex;
+    &__map {
         font-weight: 500;
         color: white;
-        width: 25%;
-        justify-content: flex-end;
-        &-image {
-            margin-left: 0.5em;
-            height: 45px;
-            border-radius: 100%;
-            border: 5px solid #2A66B0;
-        }
+        font-size: 2em;
     }
+    // &__user {
+    //     display: flex;
+    //     font-weight: 500;
+    //     color: white;
+    //     width: 25%;
+    //     justify-content: flex-end;
+    //     &-image {
+    //         margin-left: 0.5em;
+    //         height: 45px;
+    //         border-radius: 100%;
+    //         border: 5px solid #2A66B0;
+    //     }
+    // }
 }
 
 @media (max-width: 650px) {

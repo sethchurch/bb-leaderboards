@@ -3,7 +3,11 @@
     <div class='player-leaderboard__header'><span>Rank</span><span>Time</span></div>
     <span class='clear-me'></span>
     <div class='player-leaderboard__container'>
-        <userCard v-if="recordsReady" v-for="(score, index) in playerRecords" :key="'user' + index" :rank="index + 1" :time="score['time_record']" class='player-leaderboard__card' />
+        <userCard v-if="recordsReady" 
+        v-for="(score, index) in playerRecords" 
+        :key="'user' + index" :rank="index + 1" 
+        :time="score['time_record']" 
+        class='player-leaderboard__card' />
         <div v-else>Loading...</div>
     </div>
 </div>
@@ -17,7 +21,7 @@ export default {
     props: ['user'],
     data() {
         return {
-            mapId: this.$route.params.mapid || 2,
+            mapId: this.$route.query.mapid || 2,
             loading: true,
             error: null,
             recordsReady: false,
@@ -26,15 +30,15 @@ export default {
         }
     },
     created () {
-        if(this.user.steamId) this.getinternalId();
+        if(this.$route.params.userid) this.getinternalId();
     },
     watch: {
         internalId: 'fetchUserRecords',
-        '$route': 'fetchUserRecords'
+        '$route.query.mapid': 'fetchUserRecords'
     },
     methods: {
         fetchUserRecords() {
-            this.mapId = this.$route.params.mapid || 2,
+            this.mapId = this.$route.query.mapid || 2,
             this.playerRecords = [];
             this.loading = true;
             this.recordsReady = false;
@@ -56,7 +60,7 @@ export default {
             })
         },
         getinternalId() {
-            fetch('https://api.bbroleplay.co.uk/v1/account/accountid/' + this.user.steamId, {
+            fetch('https://api.bbroleplay.co.uk/v1/account/accountid/' + this.$route.params.userid, {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json'
