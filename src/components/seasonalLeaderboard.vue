@@ -1,10 +1,13 @@
 <template>
 <div class='seasonal-leaderboard' >
 
+    <!-- Map Specific Leaderboard Top 10 -->
     <div class='seasonal-leaderboard__section seasonal-leaderboard__section--map'>
+        
         <header class='seasonal-leaderboard__header seasonal-leaderboard__header--map'>
             <h2>Map Leaderboard</h2>
         </header>
+
         <div v-if="mapRecordsLoading">Loading...</div>
 
         <LeaderboardCard v-if="mapRecordsReady" 
@@ -17,10 +20,14 @@
 
     </div>
 
+
+    <!-- Overall Seasonal Leaderboard Top 100 -->
     <div class='seasonal-leaderboard__section seasonal-leaderboard__section--overall'>
+        
         <header class='seasonal-leaderboard__header seasonal-leaderboard__header--overall'>
             <h2>Seasonal Leaderboard</h2>
         </header>
+        
         <div v-if="seasonalRecordsLoading">Loading...</div>
 
         <div class='seasonal-leaderboard__wrapper seasonal-leaderboard__wrapper--overall'>

@@ -36,8 +36,8 @@
         </header>
         <div v-if="loading">Loading...</div>
 
-        <LeaderboardCard 
-        v-if="recordsReady" class='map-leaderboard__monthly--card' v-for="(record, index) in mapRecords.monthly" 
+        <LeaderboardCard v-if="recordsReady" 
+        class='map-leaderboard__monthly--card' v-for="(record, index) in mapRecords.monthly" 
         :key="'allTime' + index" 
         :rank="index + 1" 
         :player="record"
