@@ -3,7 +3,9 @@
     <div class='leaderboard-card__info'>
         <span class='leaderboard-card__place'>{{ rank + getPlaceSuffix }}</span>
         <router-link class='leaderboard-card__player' :to="'/leaderboard/user/' + player.steamid64">
-            <PlayerImage className='leaderboard-card__image' :steamId='player.steamid64'/> 
+            <div class='leaderboard-card__image-wrapper'>
+                <PlayerImage className='leaderboard-card__image' :steamId='player.steamid64'/> 
+            </div>
             <div class='leaderboard-card__name'>
                {{ player.gamename }}
             </div>

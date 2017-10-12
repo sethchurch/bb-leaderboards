@@ -10,7 +10,11 @@
         width: 50%;
         &--map {
             .seasonal-leaderboard__card {
+                transition: background-color 0.3s ease, box-shadow 0.4s, margin 0.3s ease;
                 height: 10%;
+                 &:hover {
+                    background-color: darken(white, 10%);
+                }
                 &:nth-child(-n+4) {
                     color: white;
                 }

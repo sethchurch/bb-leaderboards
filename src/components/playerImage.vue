@@ -21,7 +21,7 @@ export default {
         getPlayerImage(id) {
             let url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=7BA7B2ACDDBDD5D85F4109CB6FCB30DA&steamids=' + id;
             fetch(url)
-            .catch(err => this.error = error)
+            .catch(err => this.error = err)
             .then(res => {
                 return res.json();
             })

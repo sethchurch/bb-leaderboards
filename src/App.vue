@@ -14,7 +14,7 @@ export default {
   name: 'app',
   data() {
     return {
-      user: { steamId: '76561197988039164' },
+      user: { steamId: '76561197988039164' }, // temporary static ID currently set to Kaiden's
     }
   },
   components: {

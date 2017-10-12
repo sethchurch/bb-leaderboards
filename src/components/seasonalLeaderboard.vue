@@ -85,7 +85,7 @@ export default {
                     'Content-Type': 'application/json'
                 },
             }).catch((err) => {
-                this.mapError = err;
+                this.mapError = err.message;
             }).then((blob) => {
                 return blob.json();
             }).then((json) => {

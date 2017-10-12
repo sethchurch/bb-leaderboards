@@ -56,9 +56,12 @@
 
 @media (max-width: 650px) {
     .navbar {
-        &__greet {
+        &__map {
             display: none;
         }
+        // &__greet {
+        //     display: none;
+        // }
         &__user {
             width: 11%;
         }

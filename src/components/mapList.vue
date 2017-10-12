@@ -46,7 +46,7 @@ name: 'mapList',
             },
         })
         .catch((err) => {
-            this.error = err;
+            this.error = err.message;
         })
         .then((response) => {
             return response.json();

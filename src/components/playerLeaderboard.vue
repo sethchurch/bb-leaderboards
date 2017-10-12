@@ -1,6 +1,6 @@
 <template>
 <div class='player-leaderboard' >
-    <div class='player-leaderboard__header'><span>Rank</span><span>Time</span></div>
+    <div class='player-leaderboard__header'><span>Rank</span> <span>Time</span></div>
     <span class='clear-me'></span>
     <div class='player-leaderboard__container'>
         <userCard v-if="recordsReady" 
@@ -55,7 +55,6 @@ export default {
             })
             .then(result => {
                 this.playerRecords = result.data;
-                console.log(result)
                 this.recordsReady = true;
             })
         },
