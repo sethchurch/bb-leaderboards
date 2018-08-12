@@ -1,6 +1,15 @@
-# bb-leaderboard
+# BB Leaderboard App
 
 > BB servers leaderboard app
+
+## live demo: http://bbstats2.surge.sh/#/
+
+# Images of Application
+![App Picture 01](https://i.imgur.com/2hkpbWK.png)
+
+![App Picture 02](https://i.imgur.com/jzov9nl.png)
+
+![App Picture 03](https://i.imgur.com/v1poqV3.png)
 
 ## Build Setup
 
