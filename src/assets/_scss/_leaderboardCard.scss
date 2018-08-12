@@ -1,0 +1,79 @@
+.leaderboard-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    justify-content: space-between;
+    &__info {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+    }
+    &__place {
+        width: 37px;
+        margin-left: 1em;
+        font-weight: 800;
+        font-size: 1.1em;
+        // text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    &__player {
+        height: 75%;
+        display: flex;
+        align-items: center;
+        width: 70%;
+        font-size: 1.4em;
+        font-weight: 300;
+        text-decoration: none;
+        color: inherit;
+    }
+    &__name {
+        width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__image {
+        height: 100%;
+        border-radius: 100%;
+        margin: 0 0.2em 0 0.5em;
+    }
+    &__image-wrapper {
+        height: 100%;
+    }
+    &__time {
+        position: absolute;
+        right: 0.5em;
+        font-weight: 500;
+        font-size: 1.5em;
+        // text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 1400px) {
+    .leaderboard-card {
+        &__name {
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 1330px) {
+    .leaderboard-card {
+        &__name {
+            width: 60%;
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .leaderboard-card {
+        &__name {
+            width: 50%;
+        }
+    }
+}
