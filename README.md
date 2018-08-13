@@ -5,11 +5,11 @@
 ## live demo: http://bbstats2.surge.sh/#/
 
 # Images of Application
-![App Picture 01](https://i.imgur.com/2hkpbWK.png)
+![App Picture 01](https://i.imgur.com/SS3Phb0.png)
 
-![App Picture 02](https://i.imgur.com/jzov9nl.png)
+![App Picture 02](https://i.imgur.com/Xhxr47Y.png)
 
-![App Picture 03](https://i.imgur.com/v1poqV3.png)
+![App Picture 03](https://i.imgur.com/rjey3is.png)
 
 ## Build Setup
 
