@@ -1,0 +1,14 @@
+*, *:before *:after {
+    box-sizing: border-box !important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5;
+}
+
+.clear {
+    height: 75px;
+    display:block;
+}

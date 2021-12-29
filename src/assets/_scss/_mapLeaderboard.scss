@@ -1,0 +1,102 @@
+.map-leaderboard {
+    display: flex;
+    width: 100%;
+    &__category {
+        height: calc(100vh - 85px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .leaderboard-card {
+            transition: background-color 0.3s ease, box-shadow 0.4s, margin 0.3s ease;
+            height: 10%;
+            &:hover {
+                background-color: darken(white, 10%);
+            }
+            &:nth-child(-n+4) {
+                color: white;
+            }
+            &:nth-child(2) {
+                background-color: #E5DCA5;
+                &:hover {
+                    background-color: darken(#E5DCA5, 10%);
+                }
+            }
+            &:nth-child(3) {
+                background-color: #CFCFCF;
+                &:hover {
+                    background-color: darken(#CFCFCF, 10%);
+                }
+            }
+            &:nth-child(4) {
+                background-color: #C2B29B;
+                &:hover {
+                    background-color: darken(#C2B29B, 10%);
+                }
+            }
+        }
+    }
+    &__category-header {
+        color: white;
+        width: 100%;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        h1 {
+            margin: 0.5em 0 0.3em 0;
+        }
+    }
+    &__all-time {
+        width: 36%;
+        &--header {
+            padding: 7px 0;
+            background-color: #EABF54;
+            font-size: 1.2em;
+            z-index: 2;
+        }
+    }
+    &__monthly {
+        width: 32%;
+        &--header {
+            background-color: #CFCFCF;
+            font-size: 1.2em;
+        }
+    }
+    &__weekly {
+        width: 32%;
+        &--header {
+            background-color: #C2B29B;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.leaderboard-card {
+    margin-bottom: 1%;
+    width: 93%;
+}
+
+
+@media (max-width: 1000px) {
+    .map-leaderboard {
+        flex-direction: column;
+        &__category {
+            margin-bottom: 1em;
+        }
+        &__all-time {
+            order: 1;
+            width: 100%;
+            &--header {
+                padding: 0;
+            }
+        }
+        &__monthly {
+            order: 2;
+            width: 100%;
+        }
+        &__weekly {
+            order: 3;
+            width: 100%;
+        }
+    }
+}
