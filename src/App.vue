@@ -1,12 +1,12 @@
 <template>
-  <Navbar :user="user" />
+  <!-- <Navbar :user="user" /> -->
   <Sidebar />
-  <span class="clear"></span>
-  <router-view  :user="user" id='router-view'></router-view>
+  <!-- <span class="clear"></span> -->
+  <!-- <router-view  :user="user" id='router-view'></router-view> -->
 </template>
 
 <script>
-import Navbar from './components/navbar';
+// import Navbar from './components/navbar';
 import Sidebar from './components/sidebar';
 export default {
   name: 'app',
@@ -16,7 +16,7 @@ export default {
     }
   },
   components: {
-    Navbar,
+    // Navbar,
     Sidebar
   }
 }

@@ -1,5 +1,5 @@
 <template>
-<aside class='sidebar' >
+<aside class='sidebar sidebar--active' >
     <header class="sidebar__header">
         <i @click="toggleSidebar" class="material-icons sidebar__close">close</i>
         <img class='sidebar__logo' src="../assets/bblogo.svg" alt="BB Logo">
